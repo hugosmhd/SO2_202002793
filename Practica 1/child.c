@@ -1,21 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/wait.h>
+#include <fcntl.h>
+#include <string.h>
+#include <time.h>
 
+#define FILENAME "practica1.txt"
+#define LINE_LENGTH 8
 
-int main(int argc, char *argv[]){
-    printf ("\nSoy el Proceso hijo\n");
+void random_calls(int fd) {
+    srand(time(NULL));
+    int operation = rand() % 3; // Operación aleatoria (0: Write, 1: Read, 2: Seek)
+    char buffer[LINE_LENGTH + 1]; // Buffer para almacenar datos
 
-    /*Se leen los argmentos de argv[]*/
-    printf ("Argumento 1: %s\n", argv[1]);
-    printf ("Argumento 2: %s\n", argv[2]);
-
-    /*Se duerme el proceso por 3 segundos*/
-    sleep(3);
-
-    exit(0);
-    // abort();
-    // return 0;
+    if (operation == 0) {
+        for (int i = 0; i < LINE_LENGTH; i++) {
+            buffer[i] = 'A' + (rand() % 26);
+        }
+        buffer[LINE_LENGTH] = '\n';
+        write(fd, buffer, strlen(buffer));
+    } else if (operation == 1) {
+            read(fd, buffer, LINE_LENGTH);
+    } else if (operation == 2) {
+            lseek(fd, 0, SEEK_SET); 
+    }
 }
- 
+
+int main() {
+    int fd = open(FILENAME, O_CREAT | O_RDWR, 0644);
+    if (fd == -1) {
+        perror("Error al abrir el archivo");
+        exit(EXIT_FAILURE);
+    }
+
+    srand(getpid());
+    printf("Proceso hijo\n");
+    while (1) {
+        random_calls(fd);
+        sleep(rand() % 3 + 1);
+    }
+
+    close(fd);
+    return 0;
+}
