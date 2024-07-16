@@ -1,0 +1,19 @@
+------------ Carga de usuarios ------------
+Fecha: 2024-03-18 13:43:42
+
+Usuarios Cargados:
+Hilo #1: 91
+Hilo #2: 0
+Hilo #3: 0
+Total: 91
+
+Errores:
+    - Error en la línea 13: Saldo negativo
+    - Error en la línea 1: Saldo no válido - abc
+    - Error en la línea 39: Numero cuenta duplicado
+    - Error en la línea 41: Numero cuenta duplicado
+    - Error en la línea 52: Saldo negativo
+    - Error en la línea 53: Numero cuenta duplicado
+    - Error en la línea 66: Numero cuenta duplicado
+    - Error en la línea 1: Saldo no válido - un millon
+    - Error en la línea 100: Saldo negativo

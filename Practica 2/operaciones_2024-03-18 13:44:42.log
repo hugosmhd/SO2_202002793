@@ -1,0 +1,34 @@
+------------ Resumen de operaciones ------------
+Fecha: 2024-03-18 13:44:42
+
+Operaciones realizadas:
+Retiros: 54
+Depositos: 69
+Transferencias: 60
+Total: 183
+
+Operaciones por hilo:
+Hilo #1: 1
+Hilo #2: 69
+Hilo #3: 58
+Hilo #4: 55
+Total: 183
+
+Errores:
+    - Error en la línea 4: Operacion no valida
+    - Error en la línea 22: Monto negativo
+    - Error en la línea 6: Numero cuenta1 no existe 3600
+    - Error en la línea 8: Operacion no valida
+    - Error en la línea 15: Saldo insuficiente para retirar
+    - Error en la línea 28: Numero cuenta1 no existe 9276
+    - Error en la línea 52: Saldo insuficiente para retirar
+    - Error en la línea 56: Monto negativo
+    - Error en la línea 61: Operacion no valida
+    - Error en la línea 25: Numero cuenta1 no existe 7748
+    - Error en la línea 36: Monto negativo
+    - Error en la línea 41: Numero cuenta1 no existe 9276
+    - Error en la línea 72: Saldo insuficiente para retirar
+    - Error en la línea 75: Numero cuenta1 no existe 8206
+    - Error en la línea 51: Monto negativo
+    - Error en la línea 58: Operacion no valida
+    - Error en la línea 59: Saldo insuficiente para retirar
